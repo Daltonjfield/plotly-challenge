@@ -30,7 +30,9 @@ function demoinfo(testid){
 
 //Optionchanged function
 function optionChanged(input)
-{demoinfo(input)}
+{demoinfo(input)
+plots(input)}
+
 
 //Plot function
 function plots(input){
@@ -38,13 +40,25 @@ function plots(input){
         console.log(data.samples)
     var filteredsamples = data.samples.filter(samples=>samples.id==input)
     //fetching first element
-    var firstsample = filtereddata[0]
+    var firstsample = filteredsamples[0]
     //
-    var sampleid = firstsample.otu_ids.slice(0,10).reverse()
+    var sampleid = firstsample.otu_ids.map(id=>(`OTU ${id}`)).slice(0,10).reverse()
     var samplevalues = firstsample.sample_values.slice(0,10).reverse()
     var samplelables = firstsample.otu_labels.slice(0,10).reverse()
-    //
-    var trace = 
+    //bar
+    var trace = [{
+        x:samplevalues,
+        y:sampleid,
+        text:samplelables,
+        orientation:"h",
+        type:"bar"
+
+    }]
+
+    Plotly.newPlot("bar",trace)
+
+    //bubble
+
 
 })
 
