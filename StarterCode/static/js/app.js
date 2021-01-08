@@ -31,3 +31,21 @@ function demoinfo(testid){
 //Optionchanged function
 function optionChanged(input)
 {demoinfo(input)}
+
+//Plot function
+function plots(input){
+    d3.json("static/js/samples.json").then((data)=>{
+        console.log(data.samples)
+    var filteredsamples = data.samples.filter(samples=>samples.id==input)
+    //fetching first element
+    var firstsample = filtereddata[0]
+    //
+    var sampleid = firstsample.otu_ids.slice(0,10).reverse()
+    var samplevalues = firstsample.sample_values.slice(0,10).reverse()
+    var samplelables = firstsample.otu_labels.slice(0,10).reverse()
+    //
+    var trace = 
+
+})
+
+}
