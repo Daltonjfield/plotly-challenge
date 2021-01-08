@@ -3,6 +3,9 @@ var dropdownvar = d3.select("#selDataset")
 
 //Read samples for json
 d3.json("static/js/samples.json").then((data)=>{
- console.log(data.names)
+console.log(data.names)
+data.names.forEach(testid=>{
+    dropdownvar.append("option").text(testid)
+})
 
 })
