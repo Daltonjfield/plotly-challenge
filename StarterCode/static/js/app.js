@@ -73,3 +73,20 @@ function plots(input){
 })
 
 }
+
+//Bonus section
+function bonusplot(wfreq){
+    var tracebonus = [{
+        domain: {x:[0-1], y:[0-1]},
+        value: wfreq,
+        type: "indicator",
+        mode:"gauge+number",
+        gauge: {
+            axis: { range: [0,9] },
+            steps: [
+              { range: [0, 250], color: "lightgray" },
+              { range: [250, 400], color: "gray" }
+            ],
+    
+    }]
+}
