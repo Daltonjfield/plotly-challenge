@@ -18,12 +18,15 @@ function demoinfo(testid){
     var filtereddata = data.metadata.filter(md=>md.id==testid)
     //fetching first element
     var firstdemo = filtereddata[0]
+    //Creating variable for wfreq
+    var washingfreq = firstdemo.wfreq
     //Clearing previous list
     demodata.html('')
     Object.entries(firstdemo).forEach(([key,value])=>{
         demodata.append("p").text(key+":"+value)
     })
-
+    //Calling bonus plot
+    bonusplot(washingfreq)
 })
 
 }
@@ -31,7 +34,8 @@ function demoinfo(testid){
 //Optionchanged function
 function optionChanged(input)
 {demoinfo(input)
-plots(input)}
+plots(input)
+}
 
 
 //Plot function
@@ -87,6 +91,8 @@ function bonusplot(wfreq){
               { range: [0, 4.5], color: "lightgreen" },
               { range: [4.5, 9], color: "darkgreen" }
             ]} , title:{text:"Belly Button Washing Frequency"}
-    
+         
     }]
+    Plotly.newPlot("gauge",tracebonus)
+    
 }
