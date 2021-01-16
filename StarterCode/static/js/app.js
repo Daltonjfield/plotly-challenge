@@ -89,9 +89,9 @@ function bonusplot(wfreq){
             axis: { range: [0,9] },
             steps: [
               { range: [0, 4.5], color: "lightgreen" },
-              { range: [4.5, 9], color: "darkgreen" }
+              { range: [4.5, 9], color: "lightblue" }
             ]} , title:{text:"Belly Button Washing Frequency"}
-         
+        
     }]
     Plotly.newPlot("gauge",tracebonus)
     
