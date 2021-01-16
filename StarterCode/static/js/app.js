@@ -84,9 +84,9 @@ function bonusplot(wfreq){
         gauge: {
             axis: { range: [0,9] },
             steps: [
-              { range: [0, 250], color: "lightgray" },
-              { range: [250, 400], color: "gray" }
-            ],
+              { range: [0, 4.5], color: "lightgreen" },
+              { range: [4.5, 9], color: "darkgreen" }
+            ]} , title:{text:"Belly Button Washing Frequency"}
     
     }]
 }
