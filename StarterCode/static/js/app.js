@@ -58,7 +58,17 @@ function plots(input){
     Plotly.newPlot("bar",trace)
 
     //bubble
+    var tracebub = [{
+        x:firstsample.otu_ids,
+        y:firstsample.sample_values,
+        text:firstsample.otu_labels,
+        mode: "markers",
+        marker: {size:firstsample.sample_values , 
+            color: firstsample.otu_ids}
 
+    }]
+
+    Plotly.newPlot("bubble",tracebub)
 
 })
 
